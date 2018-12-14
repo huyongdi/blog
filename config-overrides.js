@@ -7,9 +7,9 @@ module.exports = function override(config, env) {
       ['import', {libraryName: 'antd', libraryDirectory: 'es', style: true}], // change importing css to less
       config,
   );
-//  config = rewireLess.withLoaderOptions({ //定制主题
+  config = rewireLess.withLoaderOptions({ //定制主题
 //    modifyVars: {"@primary-color": "#1890ff"},
-//    javascriptEnabled: true,
-//  })(config, env);
+    javascriptEnabled: true,
+  })(config, env);
   return config;
 };
