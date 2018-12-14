@@ -20,7 +20,7 @@
     </annotationProcessing>
   </component>
   <component name="JavaScriptSettings">
-    <option name="languageLevel" value="ES6" />
+    <option name="languageLevel" value="JSX" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
