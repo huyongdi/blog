@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reach/router": "^1.2.1",
     "antd": "^3.11.2",
     "babel-plugin-import": "^1.11.0",
     "react": "^16.6.3",
