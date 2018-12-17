@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Header from './layout/Header'
-import Middle from './layout/Middle'
+import Header from './_layout/Header'
+import Middle from './_layout/Middle'
 import './index.less'
 
 class App extends Component {

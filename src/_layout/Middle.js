@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { Router, Link } from "@reach/router";
-import Home from '../pages/Home'
-import Article from '../pages/Article'
-import About from '../pages/About'
+import Home from '../_pages/Home'
+import Article from '../_pages/Article'
+import About from '../_pages/About'
 export default class Header extends Component {
   render() {
     return (
