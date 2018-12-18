@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+const ReactMarkdown = require('react-markdown')
 
 export default class View extends Component {
   constructor(props) {
@@ -11,8 +12,6 @@ export default class View extends Component {
   }
 
   static getDerivedStateFromProps(props, state) {
-    console.log(props);
-    console.log(state);
     return props
   }
 
@@ -22,7 +21,8 @@ export default class View extends Component {
           <div className='viewTitle'>
             {this.props.title}
           </div>
-          <div className="viewContent" dangerouslySetInnerHTML={{__html: this.props.detail}}/>
+          {/*<div className="viewDetail" dangerouslySetInnerHTML={{__html: this.props.detail}}/>*/}
+          <ReactMarkdown className="viewDetail" source={this.props.detail} />,
         </div>
     );
   }
