@@ -21,8 +21,10 @@ export default class View extends Component {
           <div className='viewTitle'>
             {this.props.title}
           </div>
-          {/*<div className="viewDetail" dangerouslySetInnerHTML={{__html: this.props.detail}}/>*/}
-          <ReactMarkdown className="viewDetail" source={this.props.detail} />,
+          <ReactMarkdown
+              className="viewDetail"
+              source={`# ${this.props.detail}`}
+          />,
         </div>
     );
   }

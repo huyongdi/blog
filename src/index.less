@@ -26,19 +26,39 @@ html {
       .middleContent {
         height: calc(~'100% - 40px');
         .articleContent {
-          padding: 20px;
+          padding: 15px;
           .articleLeft {
-            float: left;
-            margin-right: 20px;
+            position: fixed;
             width: 150px;
-            > div {
-              cursor: pointer;
-              margin-bottom: 5px;
+            height: 100%;
+            .typeContent {
+              > div {
+                cursor: pointer;
+                margin-bottom: 5px;
+              }
+            }
+            .pageContent {
+              position: absolute;
+              bottom: 50px;
+              text-align: center;
+              width: 100%;
+              .ant-pagination-prev, .ant-pagination-next, .ant-pagination-jump-prev, .ant-pagination-jump-next { //前进后退按钮
+                min-width: 24px;
+              }
+              .ant-pagination-simple .ant-pagination-simple-pager input { //页码输入框
+                padding: 0;
+                margin-right: 0;
+                width: 24px;
+                color: #0099FF;
+              }
+              .ant-pagination-slash { //斜杠
+                margin: 0 0 0 3px;
+              }
             }
           }
           .articleRight {
-            float: left;
             width: calc(~'100% - 170px');
+            margin-left: 165px;
             .viewContent {
             }
           }
@@ -56,6 +76,12 @@ html {
     font-weight: bold;
   }
   .viewDetail {
-
+    code {
+      display: block;
+      overflow-x: auto;
+      padding: 0.5em;
+      background: rgb(39, 40, 34);
+      color: #fff;
+    }
   }
 }

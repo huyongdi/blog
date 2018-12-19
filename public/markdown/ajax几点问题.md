@@ -1,9 +1,7 @@
 ---
-title: AJAX几点问题
 date: 2017-03-27 12:18:55
-tags:
-categories: web
----
+type:web
+---hyd
 
 #### Form表单上传文件
 ```bash
