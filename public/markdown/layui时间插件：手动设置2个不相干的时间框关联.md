@@ -1,9 +1,4 @@
----
-title: layui时间插件：手动设置2个不相干的时间框关联
-date: 2018-05-31 20:54:44
-tags: web
-categories: web
----
+web-hydtype
 例子里面 each只是批量初始化日期
 <!--More-->
 ```bash

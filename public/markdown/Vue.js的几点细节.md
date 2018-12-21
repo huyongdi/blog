@@ -1,10 +1,4 @@
----
-title: Vue.js的几点细节
-date: 2017-03-16 15:27:00
-tags:
-categories: web
----
-
+web-hydtype
 记录几个细节问题
 
 #### 1.在vue实例里面获得input的值

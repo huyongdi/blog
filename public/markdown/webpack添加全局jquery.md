@@ -1,9 +1,4 @@
----
-title: webpack添加全局jquery以及使用bootstrap
-date: 2017-04-21 08:56:23
-tags:
-categories: web
----
+web-hydtype
 ### 1.下载依赖
 ```bash
 cnpm i jquery

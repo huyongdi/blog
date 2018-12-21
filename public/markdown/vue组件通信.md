@@ -1,10 +1,4 @@
----
-title: vue组件通信
-date: 2017-05-24 10:14:00
-tags:
-categories: web
----
-
+web-hydtype
 利用vue-cli初始化vue+webpack项目之后，想着把共用模块提取出来，比如自己写的页码组件，或者是其它公用模块，遇到了通信问题，记录一下。
 
 ### 1.click特殊情况下用mousedown替代

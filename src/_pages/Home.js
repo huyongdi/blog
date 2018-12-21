@@ -4,7 +4,7 @@ export default class Home extends Component {
   render() {
     return (
         <div className=''>
-          首页
+          我是主页待开发
         </div>
     );
   }

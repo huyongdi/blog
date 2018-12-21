@@ -1,9 +1,4 @@
----
-title: js添加页面水印
-date: 2018-05-31 20:31:38
-tags: web
-categories: web
----
+web-hydtype
 源于网络 不知原始出处
 <!--More-->
 ```bash

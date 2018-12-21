@@ -1,10 +1,4 @@
----
-title: 让ES6在浏览器内运行
-date: 2017-03-01 14:32:16
-tags:
-categories: web
----
-
+web-hydtype
 用ES6编写程序，浏览器不一定支持，这个时候就需要将ES6转化为ES5
 
 ### 浏览器环境

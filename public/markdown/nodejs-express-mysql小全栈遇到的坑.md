@@ -1,9 +1,4 @@
----
-title: nodejs+express+mysql小全栈遇到的坑
-date: 2018-05-16 16:16:13
-tags:
-categories: web
----
+web-hydtype
 项目地址：https://github.com/huyongdi/nodeApp
 ### 1.MySQL8.0
 8.0版本 安装之后不管用代码还是Navicat Premium都连接不上数据库

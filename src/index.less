@@ -8,6 +8,7 @@ html {
     #root {
       height: 100%;
       width: 100%;
+      font-family: Arial, 'Hiragino Sans GB', 'Microsoft Yahei', 'Microsoft Sans Serif', sans-serif;
       //顶部导航
       .headerContent {
         height: 40px;
@@ -25,16 +26,25 @@ html {
       //中间部分
       .middleContent {
         height: calc(~'100% - 40px');
+        overflow-y: auto;
         .articleContent {
           padding: 15px;
           .articleLeft {
             position: fixed;
             width: 150px;
             height: 100%;
+            .searchContent{
+              margin-bottom: 10px;
+            }
             .typeContent {
               > div {
                 cursor: pointer;
                 margin-bottom: 5px;
+                >span{
+                }
+                &:hover{
+                  color: #0099FF;
+                }
               }
             }
             .pageContent {

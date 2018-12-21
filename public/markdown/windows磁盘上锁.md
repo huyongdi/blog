@@ -1,10 +1,4 @@
----
-title: windows磁盘上锁
-date: 2018-05-29 10:19:34
-tags:
-categories:
----
-
+other-hydtype
 ### 1.电脑左下角搜索BitLocker 按照步骤上锁磁盘
 这时候就已经上锁磁盘了，但是开机解锁一次就永远解锁了，想上锁只能重启PC
 

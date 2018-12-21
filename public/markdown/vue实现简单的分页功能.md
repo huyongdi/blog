@@ -1,10 +1,4 @@
----
-title: vue实现简单的分页功能
-date: 2017-03-08 14:56:38
-tags:
-categories: web
----
-
+web-hydtype
 在vue的基础上实现简单的分页逻辑，记录一下.
 
 html文件:

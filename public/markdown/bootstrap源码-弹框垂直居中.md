@@ -1,10 +1,4 @@
----
-title: bootstrap源码-弹框垂直居中
-date: 2017-08-31 16:54:54
-tags:
-categories: web
----
-
+web-hydtype
 由于项目需要，bootstrap弹框要垂直居中，网上大部分都是修改js的，css改的不全，记录一下，只修改css达到效果
 
 ```bash

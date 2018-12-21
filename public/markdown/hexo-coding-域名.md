@@ -1,9 +1,4 @@
----
-title: hexo+coding+域名
-date: 2016-10-28 15:53:16
-tags:
----
-
+web-hydtype
 由于国内站点访问github太慢，记录一下设置blog到coding
 
 hexo命令以及依赖软件/设置就不写了（上一篇已经提到过）

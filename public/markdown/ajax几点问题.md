@@ -1,8 +1,4 @@
----
-date: 2017-03-27 12:18:55
-type:web
----hyd
-
+web-hydtype
 #### Form表单上传文件
 ```bash
 const formDara = new FormData($("#uploadForm")[0]);

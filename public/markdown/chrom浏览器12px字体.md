@@ -1,10 +1,4 @@
----
-title: chrom浏览器12px字体
-date: 2017-08-15 20:48:47
-tags:
-categories: web
----
-
+web-hydtype
 ### 1.chrome限制12px以下的 依旧12px
 ``` bash
 -webkit-text-size-adjust:none; //以前版本chrome适用，现在只有手机端可以用了

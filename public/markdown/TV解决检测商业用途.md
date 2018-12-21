@@ -1,10 +1,4 @@
----
-title: TV解决检测商业用途
-date: 2018-06-05 13:33:52
-tags:
-categories:
----
-
+web-hydtype
 原理：修改mac地址，让检测以为是新用户
 
 ### 1.完全卸载TV

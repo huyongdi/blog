@@ -1,9 +1,4 @@
----
-title: 其他bash环境使用git
-date: 2017-09-04 14:34:59
-tags:
-categories: web
----
+other-hydtype
 git自带的bash，不能合并窗口，xshell windows下面tab不能补全，改注册表也不行
 为了工作的方便，用上了mobaxterm，记录一下bash下配置git
 

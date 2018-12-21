@@ -1,10 +1,4 @@
----
-title: vue.js响应式问题
-date: 2017-01-19 08:49:01
-tags:
-categories: web
----
-
+web-hydtype
 首先批评一下自己，都学了快一个月的vue.js，连响应式双向绑定都没完全理解。
 直到昨天晚上加班　　＝．＝
 
