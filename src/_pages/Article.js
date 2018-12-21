@@ -62,7 +62,7 @@ export default class Article extends Component {
 
   //获取 public/markdown下的md文件列表
   getMdFile = () => {
-    axios.get('markdown').then((resp) => {
+    axios.get(`${process.env.PUBLIC_URL}/markdown`).then((resp) => {
       this.getMdText(resp.data)
     })
   }
@@ -72,13 +72,13 @@ export default class Article extends Component {
     let mdArr = []
     let obj = {}
     for (let i in data) {
-      await axios.get(`markdown/${data[i]}`).then((respMD) => {
+      await axios.get(`${process.env.PUBLIC_URL}/markdown/${data[i]}`).then((respMD) => {
         obj = {
           title: data[i].substring(0, data[i].indexOf('.md')),
           content: respMD.data
         }
         const index = obj.content.indexOf('-hydtype')
-        if (index > -1) { //杂谈
+        if (index > -1) {
           const type = obj.content.substring(0, index)
           obj.content = obj.content.substring(index + 8, obj.content.length)
           if (type === 'other') { //杂谈
