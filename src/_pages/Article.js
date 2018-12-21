@@ -62,9 +62,12 @@ export default class Article extends Component {
 
   //获取 public/markdown下的md文件列表
   getMdFile = () => {
-    axios.get(`${process.env.PUBLIC_URL}/markdown`).then((resp) => {
+    axios.get(`${process.env.PUBLIC_URL}/markdown/`).then((resp) => {
       this.getMdText(resp.data)
     })
+
+    axios.get(`${process.env.PUBLIC_URL}/markdown/abc.js`).then((a)=>{
+      console.log(a);})
   }
 
   //通过文件列表获取具体的md文件内容
