@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import View from './View'
 import axios from 'axios'
 import {Pagination, BackTop, Input, message} from 'antd';
+import list from './list'
 
 const Search = Input.Search;
 export default class Article extends Component {
@@ -35,6 +36,7 @@ export default class Article extends Component {
       message.warning('没有与之匹配的文章！');
       return
     }
+    newMdArr.sort(this.sortFun)
     this.setState({
       mdArr: newMdArr,
       currentPage: 1
@@ -59,27 +61,23 @@ export default class Article extends Component {
     })
   }
 
-
-  //获取 public/markdown下的md文件列表
-  getMdFile = () => {
-    axios.get(`${process.env.PUBLIC_URL}/markdown/`).then((resp) => {
-      this.getMdText(resp.data)
-    })
-
-    axios.get(`${process.env.PUBLIC_URL}/markdown/abc.js`).then((a)=>{
-      console.log(a);})
-  }
+//  //获取 public/markdown下的md文件列表
+//  getMdFile = () => {
+//    axios.get(`${process.env.PUBLIC_URL}/markdown`).then((resp) => {
+//      console.log(resp);
+//      this.getMdText(resp.data)
+//    })
+//  }
 
   //通过文件列表获取具体的md文件内容
   getMdText = async (data) => {
     let mdArr = []
     let obj = {}
     for (let i in data) {
-      await axios.get(`${process.env.PUBLIC_URL}/markdown/${data[i]}`).then((respMD) => {
-        obj = {
-          title: data[i].substring(0, data[i].indexOf('.md')),
-          content: respMD.data
-        }
+      const title = data[i].substring(0, data[i].lastIndexOf('/'))
+      const time = data[i].substring(data[i].lastIndexOf('/') + 1, data[i].length)
+      await axios.get(`${process.env.PUBLIC_URL}/markdown/${title}.md`).then((respMD) => {
+        obj = {title: title, content: respMD.data, time: time}
         const index = obj.content.indexOf('-hydtype')
         if (index > -1) {
           const type = obj.content.substring(0, index)
@@ -93,10 +91,25 @@ export default class Article extends Component {
         mdArr.push(obj)
       })
     }
+    this.sortList(mdArr)
+  }
+
+  //通过时间给所有文章排序
+  sortList = (mdArr) => {
+    mdArr.sort(this.sortFun)
+    this.otherArticle.sort(this.sortFun)
+    this.webArticle.sort(this.sortFun)
+
+    //填充所有文章
     this.allArticle = mdArr
     this.setState({mdArr}, () => {
       this.showArticle()
     })
+  }
+
+  //排序函数
+  sortFun = (a, b) => {
+    return b['time'] < a['time'] ? -1 : 1
   }
 
   //通过页码对应文章填充到页面
@@ -114,7 +127,8 @@ export default class Article extends Component {
   }
 
   componentDidMount() {
-    this.getMdFile()
+//    this.getMdFile()
+    this.getMdText(list)
   }
 
   shouldComponentUpdate(nextProps, nextState) {

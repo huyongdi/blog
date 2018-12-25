@@ -1,4 +1,4 @@
-web-hydtype
+other-hydtype
 原理：修改mac地址，让检测以为是新用户
 
 ### 1.完全卸载TV
