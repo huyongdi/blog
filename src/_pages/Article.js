@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import View from './View'
-import axios from 'axios'
 import {Pagination, BackTop, Input, message} from 'antd';
-import list from './list'
+import store from '../rematch'
+
+const {dispatch} = store
 
 const Search = Input.Search;
 export default class Article extends Component {
@@ -61,57 +62,6 @@ export default class Article extends Component {
     })
   }
 
-//  //获取 public/markdown下的md文件列表
-//  getMdFile = () => {
-//    axios.get(`${process.env.PUBLIC_URL}/markdown`).then((resp) => {
-//      console.log(resp);
-//      this.getMdText(resp.data)
-//    })
-//  }
-
-  //通过文件列表获取具体的md文件内容
-  getMdText = async (data) => {
-    let mdArr = []
-    let obj = {}
-    for (let i in data) {
-      const title = data[i].substring(0, data[i].lastIndexOf('/'))
-      const time = data[i].substring(data[i].lastIndexOf('/') + 1, data[i].length)
-      await axios.get(`${process.env.PUBLIC_URL}/markdown/${title}.md`).then((respMD) => {
-        obj = {title: title, content: respMD.data, time: time}
-        const index = obj.content.indexOf('-hydtype')
-        if (index > -1) {
-          const type = obj.content.substring(0, index)
-          obj.content = obj.content.substring(index + 8, obj.content.length)
-          if (type === 'other') { //杂谈
-            this.otherArticle.push(obj)
-          } else if (type === 'web') { //前端
-            this.webArticle.push(obj)
-          }
-        }
-        mdArr.push(obj)
-      })
-    }
-    this.sortList(mdArr)
-  }
-
-  //通过时间给所有文章排序
-  sortList = (mdArr) => {
-    mdArr.sort(this.sortFun)
-    this.otherArticle.sort(this.sortFun)
-    this.webArticle.sort(this.sortFun)
-
-    //填充所有文章
-    this.allArticle = mdArr
-    this.setState({mdArr}, () => {
-      this.showArticle()
-    })
-  }
-
-  //排序函数
-  sortFun = (a, b) => {
-    return b['time'] < a['time'] ? -1 : 1
-  }
-
   //通过页码对应文章填充到页面
   showArticle = () => {
     this.setState((state) => ({
@@ -126,9 +76,24 @@ export default class Article extends Component {
     })
   }
 
+  //通过rematch存的数据设置本页面的值
+  setDateByRematch = async () => {
+    let rematchState = store.getState().getFile
+    if (rematchState.mdArr.length === 0) {  //避免F5刷新导致rematch数据丢失
+      await dispatch.getFile.getMdText()
+      rematchState = store.getState().getFile
+    }
+    this.setState({
+      mdArr: rematchState.mdArr
+    })
+    this.allArticle = rematchState.mdArr
+    this.webArticle = rematchState.webArticle
+    this.otherArticle = rematchState.otherArticle
+    this.showArticle()
+  }
+
   componentDidMount() {
-//    this.getMdFile()
-    this.getMdText(list)
+    this.setDateByRematch()
   }
 
   shouldComponentUpdate(nextProps, nextState) {

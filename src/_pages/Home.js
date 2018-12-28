@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {getState} from '@rematch/core'
 
 export default class Home extends Component {
   render() {
